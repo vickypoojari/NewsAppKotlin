@@ -18,6 +18,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".ui.main.MainActivity_" />
+        <activity android:name=".ui.news.NewsActivity_" />
     </application>
 
 </manifest>

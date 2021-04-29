@@ -4,6 +4,8 @@ import android.app.Application
 import com.news.android.NewsApp
 import com.news.android.di.module.AppModule
 import com.news.android.di.module.CommonActivityModule
+import com.news.android.di.module.DataModule
+import com.news.android.di.module.NewsApiModule
 import com.news.android.di.scope.AppScope
 import dagger.BindsInstance;
 import dagger.Component;
@@ -16,6 +18,8 @@ import javax.inject.Singleton
 @Component(
     modules = [
         AppModule::class,
+        DataModule::class,
+        NewsApiModule::class,
         CommonActivityModule::class
     ]
 )

@@ -3,6 +3,7 @@ package com.news.android.di.module;
 import com.news.android.di.scope.AppScope;
 import com.news.android.ui.main.MainActivity;
 import com.news.android.ui.main.MainActivity_
+import com.news.android.ui.news.NewsActivity_
 import com.news.android.ui.splash.SplashActivity
 import com.news.android.ui.splash.SplashActivity_
 
@@ -21,4 +22,7 @@ abstract class CommonActivityModule {
 
     @ContributesAndroidInjector
     abstract fun contributesMainActivity() : MainActivity_
+
+    @ContributesAndroidInjector
+    abstract fun contributesNewsActivity() : NewsActivity_
 }
