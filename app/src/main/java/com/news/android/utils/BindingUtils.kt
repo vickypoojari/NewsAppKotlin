@@ -13,9 +13,7 @@ class BindingUtils {
         @JvmStatic
         fun recyclerViewAdapter(recyclerView: RecyclerView, url : ArrayList<String>) {
             val adapter : BaseAdapter = recyclerView.adapter as BaseAdapter
-            if(adapter != null) {
-                recyclerView.adapter = adapter
-            }
+            adapter.addItem(url)
         }
 
     }

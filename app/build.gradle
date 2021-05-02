@@ -52,6 +52,7 @@ dependencies {
     implementation deps.kotlin.stdlib
     implementation deps.kotlin.corutines
     implementation deps.lifecycle.livedata_ktx
+    implementation deps.lifecycle.viewmodel_ktx
     implementation deps.lifecycle.runtime
     implementation deps.lifecycle.java8
     implementation deps.retrofit.runtime

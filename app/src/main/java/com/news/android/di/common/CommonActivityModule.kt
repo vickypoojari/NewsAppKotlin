@@ -1,4 +1,4 @@
-package com.news.android.di.module;
+package com.news.android.di.common;
 
 import com.news.android.di.scope.AppScope;
 import com.news.android.ui.main.MainActivity;

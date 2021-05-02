@@ -5,6 +5,7 @@ import android.content.res.Resources
 import com.news.android.NewsLauncher
 import com.news.android.Launcher
 import com.news.android.NewsApp
+import com.news.android.di.common.CommonViewModule
 import com.news.android.di.scope.AppScope
 import dagger.Module
 import dagger.Provides
@@ -13,7 +14,7 @@ import dagger.Provides
  * Created by Vicky Poojari on 29/3/21.
  */
 
-@Module
+@Module(includes = [CommonViewModule::class])
 class AppModule {
 
     @AppScope

@@ -3,13 +3,12 @@ package com.news.android.di.component;
 import android.app.Application
 import com.news.android.NewsApp
 import com.news.android.di.module.AppModule
-import com.news.android.di.module.CommonActivityModule
+import com.news.android.di.common.CommonActivityModule
 import com.news.android.di.module.DataModule
-import com.news.android.di.module.NewsApiModule
+import com.news.android.di.module.ApiModule
 import com.news.android.di.scope.AppScope
 import dagger.BindsInstance;
 import dagger.Component;
-import javax.inject.Singleton
 
 /**
  * Created by Vicky Poojari on 29/3/21.
@@ -19,7 +18,7 @@ import javax.inject.Singleton
     modules = [
         AppModule::class,
         DataModule::class,
-        NewsApiModule::class,
+        ApiModule::class,
         CommonActivityModule::class
     ]
 )

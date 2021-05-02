@@ -2,16 +2,19 @@ package com.news.android.ui.main
 
 import android.content.Context
 import android.os.Bundle
+import android.util.Log
+import androidx.lifecycle.ViewModelProvider
 import com.news.android.R
 import com.news.android.databinding.ActivityMainBinding
 import com.news.android.ui.base.BaseActivity
 import com.news.android.ui.base.BaseAdapter
+import com.news.android.utils.Status
 import dagger.android.AndroidInjection
 import org.androidannotations.annotations.AfterInject
 import org.androidannotations.annotations.EActivity
 
 @EActivity
-open class MainActivity : BaseActivity<ActivityMainBinding>() {
+open class MainActivity : BaseActivity<ActivityMainBinding, MainViewModel>() {
 
     lateinit var list : ArrayList<String>
 
@@ -40,5 +43,18 @@ open class MainActivity : BaseActivity<ActivityMainBinding>() {
         mBinding.model = list
         mBinding.recyclerView.adapter = BaseAdapter(R.layout.item_news)
         mBinding.categoryRV.adapter = BaseAdapter(R.layout.item_categories)
+
+        viewModel = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+        viewModel.getUsers().observe(this, {
+            when (it.status) {
+                Status.SUCCESS -> Log.e("TAG", "Status: ${it.data}" )
+                Status.ERROR -> Log.e("TAG", "Error: ${it.message}" )
+                Status.LOADING -> Log.e("TAG", "Loading" )
+            }
+        })
+
+        mBinding.textView.setOnClickListener {
+            viewModel.fetchClients()
+        }
     }
 }

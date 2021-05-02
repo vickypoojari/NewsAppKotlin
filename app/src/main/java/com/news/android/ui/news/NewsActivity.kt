@@ -5,6 +5,7 @@ import android.os.Bundle
 import com.news.android.R
 import com.news.android.databinding.ActivityNewsBinding
 import com.news.android.ui.base.BaseActivity
+import com.news.android.ui.main.MainViewModel
 import com.news.android.ui.news.adapter.NewsPagerAdapter
 import dagger.android.AndroidInjection
 import org.androidannotations.annotations.AfterInject
@@ -15,7 +16,7 @@ import org.androidannotations.annotations.EActivity
  */
 
 @EActivity
-open class NewsActivity : BaseActivity<ActivityNewsBinding>() {
+open class NewsActivity : BaseActivity<ActivityNewsBinding, MainViewModel>() {
 
     companion object {
         fun start(context : Context) {

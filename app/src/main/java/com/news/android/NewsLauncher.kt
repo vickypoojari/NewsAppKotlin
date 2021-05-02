@@ -14,7 +14,7 @@ class NewsLauncher : Launcher {
     private lateinit var context : Context
 
     override fun home() {
-        NewsActivity.start(context)
+        MainActivity.start(context)
     }
 
     override fun with(context: Context): Launcher {

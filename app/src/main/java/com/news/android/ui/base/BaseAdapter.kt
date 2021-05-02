@@ -1,11 +1,13 @@
 package com.news.android.ui.base
 
+import android.content.ContentValues.TAG
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.news.android.databinding.ItemNewsBinding
+import java.util.ArrayList
 
 /**
  * Created by Vicky Poojari on 27/4/21.
@@ -23,6 +25,10 @@ import com.news.android.databinding.ItemNewsBinding
 
     override fun onBindViewHolder(holder: BaseViewHolder, position: Int) {
         holder.onBind(position)
+    }
+
+    fun addItem(url: ArrayList<String>) {
+        Log.e(TAG, "addItem: $url")
     }
 
     class ViewHolder(binding: View) : BaseViewHolder(binding) {

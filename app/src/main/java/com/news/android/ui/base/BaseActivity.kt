@@ -5,12 +5,19 @@ import androidx.annotation.LayoutRes
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.ViewModelProvider
+import com.news.android.api.NewsApi
+import javax.inject.Inject
 
 /**
  * Created by Vicky Poojari on 26/4/21.
  */
 
-abstract class BaseActivity<T : ViewDataBinding> : AppCompatActivity() {
+abstract class BaseActivity<T : ViewDataBinding, V : ViewModel> : AppCompatActivity() {
+
+    @Inject lateinit var factory: ViewModelProvider.Factory
+    @Inject lateinit var viewModel: V
 
     protected lateinit var mBinding : T
 
